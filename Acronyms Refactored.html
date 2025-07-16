@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Acronym Reference Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #333333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .acronym-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .acronym-item a:hover {
+            color: #b56100;
+        }
+        
+        header {
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .accessibility-button {
+            background: #4a9eff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 1rem auto;
+            display: block;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .accessibility-button:hover {
+            background: #3a8eef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(74, 158, 255, 0.3);
+        }
+        
+        .accessibility-button:focus {
+            outline: 2px solid #ffffff;
+            outline-offset: 2px;
+        }
+        
+        /* Large font mode styles */
+        body.large-font {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        body.large-font h1 {
+            font-size: 3rem;
+        }
+        
+        body.large-font .subtitle {
+            font-size: 1.3rem;
+        }
+        
+        body.large-font .search-box {
+            font-size: 18px;
+            padding: 15px 25px;
+        }
+        
+        body.large-font .filter-btn {
+            font-size: 16px;
+            padding: 12px 20px;
+        }
+        
+        body.large-font .category-header {
+            font-size: 1.5rem;
+        }
+        
+        body.large-font .acronym-term {
+            font-size: 1.4rem;
+        }
+        
+        body.large-font .acronym-full {
+            font-size: 1.1rem;
+        }
+        
+        body.large-font .acronym-desc {
+            font-size: 1rem;
+        }
+        
+        body.large-font .stats {
+            font-size: 1rem;
+        }
+        
+        body.large-font .no-results {
+            font-size: 1.4rem;
+        }
+        
+        body.large-font .accessibility-button {
+            font-size: 16px;
+            padding: 12px 24px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        
+        .subtitle {
+            text-align: center;
+            opacity: 0.85;
+            font-size: 1.1rem;
+            color: #b0b0b0;
+        }
+        
+        .controls {
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+            border: 1px solid #444444;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #555555;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #4a9eff;
+            box-shadow: 0 0 0 1px rgba(74, 158, 255, 0.3);
+        }
+        
+        .search-box::placeholder {
+            color: #888888;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #4a9eff;
+            background: #2a2a2a;
+            color: #4a9eff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .filter-btn:hover {
+            background: #4a9eff;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(74, 158, 255, 0.3);
+        }
+        
+        .filter-btn.active {
+            background: #4a9eff;
+            color: #ffffff;
+        }
+        
+        .stats {
+            text-align: center;
+            color: #999999;
+            margin-top: 1rem;
+        }
+        
+        .category-section {
+            background: #2a2a2a;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            overflow: hidden;
+            border: 1px solid #444444;
+        }
+        
+        .category-header {
+            background: #1f1f1f;
+            color: #ffffff;
+            padding: 1rem 1.5rem;
+            font-size: 1.3rem;
+            text-align:center;
+            font-weight: bold;
+            border-bottom: 2px solid #4a9eff;
+        }
+        
+        .acronym-grid {
+            display: grid;
+            gap: 1rem;
+            padding: 1.5rem;
+        }
+        
+        .acronym-item {
+            padding: 1rem;
+            border-left: 4px solid #4a9eff;
+            background: #1f1f1f;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .acronym-item:hover {
+            background: #252525;
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(74, 158, 255, 0.2);
+        }
+        
+        .acronym-item.hidden {
+            display: none;
+        }
+        
+        .acronym-term {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4a9eff;
+            margin-bottom: 0.3rem;
+        }
+        
+        .acronym-full {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .acronym-desc {
+            color: #b0b0b0;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            background-color: #b56100;
+            color: #ffffff;
+            padding: 2px 4px;
+            font-weight: bold;
+            border-radius: 2px;
+        }
+
+        .highlight:hover {
+            background-color: #4A9EFF; 
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #999999;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .filter-buttons {
+                justify-content: center;
+            }
+            
+            .filter-btn {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mortgage Acronym Reference Guide</h1>
+            <p class="subtitle">Quick reference for mortgage industry terminology</p>
+            <p class="subtitle">For more information on a term, click the acronym to learn more!</p>
+            <button id="accessibilityBtn" class="accessibility-button" aria-label="Toggle large font mode for better readability">
+                🔍 Large Font Mode
+            </button>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="controls">
+            <input type="text" id="searchBox" class="search-box" placeholder="Search acronyms, full names, or descriptions...">
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Categories</button>
+                <button class="filter-btn" data-category="loans">Loan Types</button>
+                <button class="filter-btn" data-category="financial">Financial</button>
+                <button class="filter-btn" data-category="process">Process</button>
+                <button class="filter-btn" data-category="compliance">Compliance</button>
+                <button class="filter-btn" data-category="secondary">Secondary Market</button>
+                <button class="filter-btn" data-category="systems">Systems</button>
+                <button class="filter-btn" data-category="credit">Credit</button>
+                <button class="filter-btn" data-category="property">Property</button>
+                <button class="filter-btn" data-category="misc">Miscellaneous</button>
+            </div>
+            
+            <div class="stats">
+                <span id="resultCount">Showing all acronyms</span>
+            </div>
+        </div>
+        
+        <div id="acronymContainer">
+            <!-- Loan Types & Products -->
+            <div class="category-section" data-category="loans">
+                <div class="category-header">Loan Types & Products</div>
+                <div class="acronym-grid">
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/ask-cfpb/what-is-an-adjustable-rate-mortgage-arm-en-136/" target="_blank" rel="noopener noreferrer">ARM</a></div>
+                        <div class="acronym-full">Adjustable Rate Mortgage</div>
+                        <div class="acronym-desc">Mortgage where interest rate changes periodically based on an index</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/ask-cfpb/what-are-closing-costs-en-104/" target="_blank" rel="noopener noreferrer">CC</a></div>
+                        <div class="acronym-full">Closing Costs</div>
+                        <div class="acronym-desc">Closing costs are various fees and expenses associated with finalizing a real estate transaction</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.hud.gov/program_offices/housing/fhahistory" target="_blank" rel="noopener noreferrer">FHA</a></div>
+                        <div class="acronym-full">Federal Housing Administration</div>
+                        <div class="acronym-desc">Government-backed loan with lower down payment requirements (3.5%) and more flexible credit standards</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-fixed-rate-mortgage-en-140/" target="_blank" rel="noopener noreferrer">FRM</a></div>
+                        <div class="acronym-full">Fixed Rate Mortgage</div>
+                        <div class="acronym-desc">Mortgage with the same interest rate for the entire loan term</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-conventional-loan-en-117/" target="_blank" rel="noopener noreferrer">Conventional</a></div>
+                        <div class="acronym-full">Conventional home loan</div>
+                        <div class="acronym-desc">Any mortgage loan that is not insured or guaranteed by the government</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.fhfa.gov/PolicyProgramsResearch/Programs/Pages/HARP.aspx" target="_blank" rel="noopener noreferrer">HARP</a></div>
+                        <div class="acronym-full">Home Affordable Refinance Program</div>
+                        <div class="acronym-desc">Discontinued program that helped underwater homeowners refinance</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-heloc-en-246/" target="_blank" rel="noopener noreferrer">HELOC</a></div>
+                        <div class="acronym-full">Home Equity Line of Credit</div>
+                        <div class="acronym-desc">Revolving credit line allowing borrowers to draw funds against home equity</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.va.gov/housing-assistance/home-loans/loan-types/irrrl/" target="_blank" rel="noopener noreferrer">IRRRL</a></div>
+                        <div class="acronym-full">Interest Rate Reduction Refinance Loan</div>
+                        <div class="acronym-desc">VA streamline refinance option for lowering interest rates</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/j/jumboloan.asp" target="_blank" rel="noopener noreferrer">JUMBO</a></div>
+                        <div class="acronym-full">Jumbo Loan</div>
+                        <div class="acronym-desc">Loan exceeding conforming loan limits set by FHFA</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.rd.usda.gov/programs-services/single-family-housing-guaranteed-loan-program" target="_blank" rel="noopener noreferrer">USDA</a></div>
+                        <div class="acronym-full">United States Department of Agriculture</div>
+                        <div class="acronym-desc">Loans for rural properties with no down payment required</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.va.gov/housing-assistance/home-loans/" target="_blank" rel="noopener noreferrer">VA</a></div>
+                        <div class="acronym-full">Veterans Affairs</div>
+                        <div class="acronym-desc">Loan exclusively for military members with no down payment required</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Calculations & Ratios -->
+            <div class="category-section" data-category="financial">
+                <div class="category-header">Financial Calculations & Ratios</div>
+                <div class="acronym-grid">
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.va.gov/housing-assistance/home-loans/funding-fee-and-closing-costs/" target="_blank" rel="noopener noreferrer">FF</a></div>
+                        <div class="acronym-full">Funding Fee</div>
+                        <div class="acronym-desc">A one-time fee for VA loans that helps keep the VA loan program running without cost to taxpayers.</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/owning-a-home/close/look-out-for-revised-loan-estimates/" target="_blank" rel="noopener noreferrer">FF</a></div>
+                        <div class="acronym-full">Change of Circumstance</div>
+                        <div class="acronym-desc">a significant event or new discovery that occurs after a lender has provided an initial Loan Estimate (LE) but before the Closing Disclosure (CD) is issued</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/c/cltv.asp" target="_blank" rel="noopener noreferrer">CLTV</a></div>
+                        <div class="acronym-full">Combined Loan-to-Value</div>
+                        <div class="acronym-desc">Ratio including all loans secured by the property</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/d/dti.asp" target="_blank" rel="noopener noreferrer">DTI</a></div>
+                        <div class="acronym-full">Debt-to-Income</div>
+                        <div class="acronym-desc">Ratio comparing monthly debts to gross monthly income</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/l/loantovalue.asp" target="_blank" rel="noopener noreferrer">LTV</a></div>
+                        <div class="acronym-full">Loan-to-Value</div>
+                        <div class="acronym-desc">Ratio comparing loan amount to property value</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/m/mortgage-insurance-premium-mip.asp" target="_blank" rel="noopener noreferrer">MIP</a></div>
+                        <div class="acronym-full">Mortgage Insurance Premium</div>
+                        <div class="acronym-desc">FHA loan insurance similar to PMI</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/p/piti.asp" target="_blank" rel="noopener noreferrer">PITI</a></div>
+                        <div class="acronym-full">Principal, Interest, Taxes, and Insurance</div>
+                        <div class="acronym-desc">Components of the total monthly housing payment</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/ask-cfpb/what-is-private-mortgage-insurance-en-122/" target="_blank" rel="noopener noreferrer">PMI</a></div>
+                        <div class="acronym-full">Private Mortgage Insurance</div>
+                        <div class="acronym-desc">Insurance required when down payment is less than 20%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mortgage Process Terms -->
+            <div class="category-section" data-category="process">
+                <div class="category-header">Mortgage Process Terms</div>
+                <div class="acronym-grid">
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-closing-disclosure-en-1983/" target="_blank" rel="noopener noreferrer">CD</a></div>
+                        <div class="acronym-full">Closing Disclosure</div>
+                        <div class="acronym-desc">Final statement of actual loan terms and closing costs</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.va.gov/housing-assistance/home-loans/how-to-apply/" target="_blank" rel="noopener noreferrer">COE</a></div>
+                        <div class="acronym-full">Certificate of Eligibility</div>
+                        <div class="acronym-desc">Document required for VA loan qualification</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.hud.gov/sites/documents/40001gahsgh.pdf" target="_blank" rel="noopener noreferrer">TPO-FHA addendum</a></div>
+                        <div class="acronym-full">Third Party Originator FHA addendum</div>
+                        <div class="acronym-desc">A document used when FHA loans are originated through third-party channels rather than directly by FHA-approved lenders.</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/owning-a-home/close/look-out-for-revised-loan-estimates/" target="_blank" rel="noopener noreferrer">COC</a></div>
+                        <div class="acronym-full">Change of Circumstance</div>
+                        <div class="acronym-desc">a significant event or new discovery that occurs after a lender has provided an initial Loan Estimate (LE) but before the Closing Disclosure (CD) is issued</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/c/clear-to-close.asp" target="_blank" rel="noopener noreferrer">CTC</a></div>
+                        <div class="acronym-full">Clear to Close</div>
+                        <div class="acronym-desc">Final underwriting approval to proceed with closing</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/g/goodfaithestimate.asp" target="_blank" rel="noopener noreferrer">GFE</a></div>
+                        <div class="acronym-full">Good Faith Estimate</div>
+                        <div class="acronym-desc">Old disclosure form replaced by Loan Estimate under TRID</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-loan-estimate-en-1957/" target="_blank" rel="noopener noreferrer">LE</a></div>
+                        <div class="acronym-full">Loan Estimate</div>
+                        <div class="acronym-desc">Initial disclosure of loan terms and estimated costs</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://blueprinttitle.com/what-is-post-closing/" target="_blank" rel="noopener noreferrer">PC</a></div>
+                        <div class="acronym-full">Post Closing</div>
+                        <div class="acronym-desc">The period and activities that occur after the official closing of a transaction</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/l/letter-of-explanation-loe.asp" target="_blank" rel="noopener noreferrer">LOE</a></div>
+                        <div class="acronym-full">Letter of Explanation</div>
+                        <div class="acronym-desc">Written explanation for credit issues or unusual circumstances</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/l/letter-of-intent.asp" target="_blank" rel="noopener noreferrer">LOI</a></div>
+                        <div class="acronym-full">Letter of Intent</div>
+                        <div class="acronym-desc">Document expressing interest in a property or loan terms</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.rocketmortgage.com/learn/letter-of-explanation" target="_blank" rel="noopener noreferrer">LOX</a></div>
+                        <div class="acronym-full">Letter of Explanation</div>
+                        <div class="acronym-desc">Alternative acronym some systems use for LOE</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/n/nonowner-occupied.asp" target="_blank" rel="noopener noreferrer">NOO</a></div>
+                        <div class="acronym-full">Non-Owner Occupied</div>
+                        <div class="acronym-desc">Investment property not used as primary residence</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/o/owner-occupied.asp" target="_blank" rel="noopener noreferrer">OO</a></div>
+                        <div class="acronym-full">Owner-Occupied</div>
+                        <div class="acronym-desc">Property used as borrower's primary residence</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/p/proof-of-funds.asp" target="_blank" rel="noopener noreferrer">POF</a></div>
+                        <div class="acronym-full">Proof of Funds</div>
+                        <div class="acronym-desc">Documentation showing available money for down payment and closing</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/f/funding-number.asp" target="_blank" rel="noopener noreferrer">PTD</a></div>
+                        <div class="acronym-full">Permission to Disburse</div>
+                        <div class="acronym-desc">Authorization to release funds at closing</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/r/real-estate-owned.asp" target="_blank" rel="noopener noreferrer">REO</a></div>
+                        <div class="acronym-full">Real Estate Owned</div>
+                        <div class="acronym-desc">Foreclosed properties owned by lenders</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/v/verification-of-deposit.asp" target="_blank" rel="noopener noreferrer">VOD</a></div>
+                        <div class="acronym-full">Verification of Deposit</div>
+                        <div class="acronym-desc">Confirmation of funds in bank accounts</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/v/verification-of-employment.asp" target="_blank" rel="noopener noreferrer">VOE</a></div>
+                        <div class="acronym-full">Verification of Employment</div>
+                        <div class="acronym-desc">Document confirming job status and income</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/v/verification-of-mortgage-vom.asp" target="_blank" rel="noopener noreferrer">VOM</a></div>
+                        <div class="acronym-full">Verification of Mortgage</div>
+                        <div class="acronym-desc">Document showing mortgage payment history</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/v/verification-of-rent.asp" target="_blank" rel="noopener noreferrer">VOR</a></div>
+                        <div class="acronym-full">Verification of Rent</div>
+                        <div class="acronym-desc">Confirmation from landlord of rental payment history</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regulatory & Compliance -->
+            <div class="category-section" data-category="compliance">
+                <div class="category-header">Regulatory & Compliance</div>
+                <div class="acronym-grid">
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.fincen.gov/anti-money-laundering-statutes-and-regulations" target="_blank" rel="noopener noreferrer">AML</a></div>
+                        <div class="acronym-full">Anti-Money Laundering</div>
+                        <div class="acronym-desc">Compliance requirements to prevent illegal money transfers</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/rules-policy/regulations/1026/43/" target="_blank" rel="noopener noreferrer">ATR</a></div>
+                        <div class="acronym-full">Ability-to-Repay</div>
+                        <div class="acronym-desc">Rule requiring lenders to verify borrower can afford the loan</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.fincen.gov/resources/statutes-regulations/bank-secrecy-act" target="_blank" rel="noopener noreferrer">BSA</a></div>
+                        <div class="acronym-full">Bank Secrecy Act</div>
+                        <div class="acronym-desc">Law requiring monitoring and reporting of suspicious financial activity</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/" target="_blank" rel="noopener noreferrer">CFPB</a></div>
+                        <div class="acronym-full">Consumer Financial Protection Bureau</div>
+                        <div class="acronym-desc">Primary federal regulator for mortgage lending</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.federalreserve.gov/communitydev/cra_about.htm" target="_blank" rel="noopener noreferrer">CRA</a></div>
+                        <div class="acronym-full">Community Reinvestment Act</div>
+                        <div class="acronym-desc">Law encouraging lending in all communities including low-income areas</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/compliance/compliance-resources/equal-credit-opportunity-act/" target="_blank" rel="noopener noreferrer">ECOA</a></div>
+                        <div class="acronym-full">Equal Credit Opportunity Act</div>
+                        <div class="acronym-desc">Law prohibiting lending discrimination</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.ftc.gov/legal-library/browse/rules/fair-accurate-credit-transactions-act" target="_blank" rel="noopener noreferrer">FACTA</a></div>
+                        <div class="acronym-full">Fair and Accurate Credit Transactions Act</div>
+                        <div class="acronym-desc">Enhancement to FCRA adding identity theft protections</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.ftc.gov/legal-library/browse/statutes/fair-credit-reporting-act" target="_blank" rel="noopener noreferrer">FCRA</a></div>
+                        <div class="acronym-full">Fair Credit Reporting Act</div>
+                        <div class="acronym-desc">Law governing how credit reports can be used</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.fhfa.gov/AboutUs" target="_blank" rel="noopener noreferrer">FHFA</a></div>
+                        <div class="acronym-full">Federal Housing Finance Agency</div>
+                        <div class="acronym-desc">Regulator overseeing Fannie Mae and Freddie Mac</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/data-research/hmda/" target="_blank" rel="noopener noreferrer">HMDA</a></div>
+                        <div class="acronym-full">Home Mortgage Disclosure Act</div>
+                        <div class="acronym-desc">Law requiring collection and reporting of demographic lending data</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/rules-policy/regulations/1026/32/" target="_blank" rel="noopener noreferrer">HOEPA</a></div>
+                        <div class="acronym-full">Home Ownership and Equity Protection Act</div>
+                        <div class="acronym-desc">Additional protections for high-cost mortgages</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/rules-policy/final-rules/ability-repay-and-qualified-mortgage-rule-under-truth-lending-act-regulation-z/" target="_blank" rel="noopener noreferrer">QM</a></div>
+                        <div class="acronym-full">Qualified Mortgage</div>
+                        <div class="acronym-desc">Loan meeting specific underwriting standards for legal protection</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/compliance/compliance-resources/mortgage-resources/real-estate-settlement-procedures-act/" target="_blank" rel="noopener noreferrer">RESPA</a></div>
+                        <div class="acronym-full">Real Estate Settlement Procedures Act</div>
+                        <div class="acronym-desc">Federal law governing mortgage closings and requiring specific disclosures</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://nationwidelicensingsystem.org/slr/common/SafeAct/Pages/default.aspx" target="_blank" rel="noopener noreferrer">SAFE</a></div>
+                        <div class="acronym-full">Secure and Fair Enforcement Act</div>
+                        <div class="acronym-desc">Law requiring loan originator licensing and registration</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/compliance/compliance-resources/truth-in-lending-act/" target="_blank" rel="noopener noreferrer">TILA</a></div>
+                        <div class="acronym-full">Truth in Lending Act</div>
+                        <div class="acronym-desc">Law requiring clear disclosure of loan terms and costs</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/compliance/compliance-resources/mortgage-resources/tila-respa-disclosure-rule/" target="_blank" rel="noopener noreferrer">TRID</a></div>
+                        <div class="acronym-full">TILA-RESPA Integrated Disclosure</div>
+                        <div class="acronym-desc">Combined rules creating the Loan Estimate and Closing Disclosure forms</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Market & Investors -->
+            <div class="category-section" data-category="secondary">
+                <div class="category-header">Secondary Market & Investors</div>
+                <div class="acronym-grid">
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/a/automated-underwriting-system.asp" target="_blank" rel="noopener noreferrer">AUS</a></div>
+                        <div class="acronym-full">Automated Underwriting System</div>
+                        <div class="acronym-desc">Computer system providing quick loan approval decisions</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.fanniemae.com/content/technology_requirements/desktop-originator-user-guide.pdf" target="_blank" rel="noopener noreferrer">DO</a></div>
+                        <div class="acronym-full">Desktop Originator</div>
+                        <div class="acronym-desc">Older Fannie Mae system interface for loan delivery</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://singlefamily.fanniemae.com/tools-applications/desktop-underwriter-du" target="_blank" rel="noopener noreferrer">DU</a></div>
+                        <div class="acronym-full">Desktop Underwriter</div>
+                        <div class="acronym-desc">Fannie Mae's automated underwriting system</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.freddiemac.com/" target="_blank" rel="noopener noreferrer">FHLMC</a></div>
+                        <div class="acronym-full">Federal Home Loan Mortgage Corporation (Freddie Mac)</div>
+                        <div class="acronym-desc">Government-sponsored enterprise competing with Fannie Mae</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.fanniemae.com/" target="_blank" rel="noopener noreferrer">FNMA</a></div>
+                        <div class="acronym-full">Federal National Mortgage Association (Fannie Mae)</div>
+                        <div class="acronym-desc">Government-sponsored enterprise that purchases mortgages from lenders</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.ginniemae.gov/" target="_blank" rel="noopener noreferrer">GNMA</a></div>
+                        <div class="acronym-full">Government National Mortgage Association (Ginnie Mae)</div>
+                        <div class="acronym-desc">Government agency guaranteeing government-backed mortgage securities</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/g/gse.asp" target="_blank" rel="noopener noreferrer">GSE</a></div>
+                        <div class="acronym-full">Government-Sponsored Enterprise</div>
+                        <div class="acronym-desc">Entities like Fannie Mae and Freddie Mac with government backing</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://sf.freddiemac.com/tools-learning/loan-product-adviser" target="_blank" rel="noopener noreferrer">LP</a></div>
+                        <div class="acronym-full">Loan Prospector</div>
+                        <div class="acronym-desc">Freddie Mac's automated underwriting system</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/m/mbs.asp" target="_blank" rel="noopener noreferrer">MBS</a></div>
+                        <div class="acronym-full">Mortgage-Backed Securities</div>
+                        <div class="acronym-desc">Bundled loans sold to investors as securities</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://singlefamily.fanniemae.com/data-standardization/uniform-loan-delivery-dataset" target="_blank" rel="noopener noreferrer">ULDD</a></div>
+                        <div class="acronym-full">Uniform Loan Delivery Dataset</div>
+                        <div class="acronym-desc">Standardized format for delivering loan data to GSEs</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Systems & Technology -->
+            <div class="category-section" data-category="systems">
+                <div class="category-header">Systems & Technology</div>
+                <div class="acronym-grid">
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.alogent.com/blog/automated-indexing-basics-benefits-and-technology" target="_blank" rel="noopener noreferrer">AI</a></div>
+                        <div class="acronym-full">Automated Indexing</div>
+                        <div class="acronym-desc">System automatically categorizing loan documents</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.ibm.com/cloud/learn/api" target="_blank" rel="noopener noreferrer">API</a></div>
+                        <div class="acronym-full">Application Programming Interface</div>
+                        <div class="acronym-desc">Connection method between different software systems</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.salesforce.com/crm/what-is-crm/" target="_blank" rel="noopener noreferrer">CRM</a></div>
+                        <div class="acronym-full">Customer Relationship Management</div>
+                        <div class="acronym-desc">System tracking borrower interactions and pipeline</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.docusign.com/learn/document-management-system" target="_blank" rel="noopener noreferrer">EDM</a></div>
+                        <div class="acronym-full">Electronic Document Management</div>
+                        <div class="acronym-desc">System for storing and organizing digital loan files</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/l/loan-origination-system.asp" target="_blank" rel="noopener noreferrer">LOS</a></div>
+                        <div class="acronym-full">Loan Origination System</div>
+                        <div class="acronym-desc">Primary software managing the entire loan process</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.cloudflare.com/learning/access-management/what-is-mfa/" target="_blank" rel="noopener noreferrer">MFA</a></div>
+                        <div class="acronym-full">Multi-Factor Authentication</div>
+                        <div class="acronym-desc">Security requiring multiple verification methods</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.ibm.com/topics/optical-character-recognition" target="_blank" rel="noopener noreferrer">OCR</a></div>
+                        <div class="acronym-full">Optical Character Recognition</div>
+                        <div class="acronym-desc">Technology converting scanned documents to editable text</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/p/point-of-sale.asp" target="_blank" rel="noopener noreferrer">POS</a></div>
+                        <div class="acronym-full">Point of Sale</div>
+                        <div class="acronym-desc">Borrower-facing application system like Floify</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/p/pricing-engine.asp" target="_blank" rel="noopener noreferrer">PPE</a></div>
+                        <div class="acronym-full">Pricing and Product Eligibility</div>
+                        <div class="acronym-desc">Engine determining rates and available loan products</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.salesforce.com/products/platform/best-practices/saas/" target="_blank" rel="noopener noreferrer">SaaS</a></div>
+                        <div class="acronym-full">Software as a Service</div>
+                        <div class="acronym-desc">Cloud-based software delivery model</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.okta.com/identity-101/what-is-single-sign-on/" target="_blank" rel="noopener noreferrer">SSO</a></div>
+                        <div class="acronym-full">Single Sign-On</div>
+                        <div class="acronym-desc">One login providing access to multiple systems</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credit & Underwriting -->
+            <div class="category-section" data-category="credit">
+                <div class="category-header">Credit & Underwriting</div>
+                <div class="acronym-grid">
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/a/ach.asp" target="_blank" rel="noopener noreferrer">ACH</a></div>
+                        <div class="acronym-full">Automated Clearing House</div>
+                        <div class="acronym-desc">Electronic payment network for direct deposits and payments</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/a/automated-underwriting.asp" target="_blank" rel="noopener noreferrer">AU</a></div>
+                        <div class="acronym-full">Automated Underwriting</div>
+                        <div class="acronym-desc">Computer-based loan approval process</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/a/automated-valuation-model.asp" target="_blank" rel="noopener noreferrer">AVM</a></div>
+                        <div class="acronym-full">Automated Valuation Model</div>
+                        <div class="acronym-desc">Computer-generated property value estimate</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/b/broker-price-opinion-bpo.asp" target="_blank" rel="noopener noreferrer">BPO</a></div>
+                        <div class="acronym-full">Broker Price Opinion</div>
+                        <div class="acronym-desc">Less detailed property valuation alternative to full appraisal</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.hud.gov/program_offices/housing/sfh/ins/direct_endorsement" target="_blank" rel="noopener noreferrer">DE</a></div>
+                        <div class="acronym-full">Direct Endorsement</div>
+                        <div class="acronym-desc">FHA-approved underwriter who can approve FHA loans</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/f/fico.asp" target="_blank" rel="noopener noreferrer">FICO</a></div>
+                        <div class="acronym-full">Fair Isaac Corporation</div>
+                        <div class="acronym-desc">Most common credit scoring model used in mortgage lending</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/n/nsf.asp" target="_blank" rel="noopener noreferrer">NSF</a></div>
+                        <div class="acronym-full">Non-Sufficient Funds</div>
+                        <div class="acronym-desc">Bounced check or payment due to insufficient account balance</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://singlefamily.fanniemae.com/media/9391/display" target="_blank" rel="noopener noreferrer">PIW</a></div>
+                        <div class="acronym-full">Property Inspection Waiver</div>
+                        <div class="acronym-desc">GSE program allowing loans without traditional appraisal</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.va.gov/housing-assistance/home-loans/loan-process/" target="_blank" rel="noopener noreferrer">SAR</a></div>
+                        <div class="acronym-full">Staff Appraisal Reviewer</div>
+                        <div class="acronym-desc">Person reviewing appraisals for accuracy and compliance</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.creditkarma.com/credit/i/tri-merge-credit-report" target="_blank" rel="noopener noreferrer">TC</a></div>
+                        <div class="acronym-full">Tri-merge Credit</div>
+                        <div class="acronym-desc">Credit report combining data from all three major bureaus</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/u/underwriting.asp" target="_blank" rel="noopener noreferrer">UW</a></div>
+                        <div class="acronym-full">Underwriting/Underwriter</div>
+                        <div class="acronym-desc">Process or person reviewing loan for approval</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property & Title -->
+            <div class="category-section" data-category="property">
+                <div class="category-header">Property & Title</div>
+                <div class="acronym-grid">
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.alta.org/" target="_blank" rel="noopener noreferrer">ALTA</a></div>
+                        <div class="acronym-full">American Land Title Association</div>
+                        <div class="acronym-desc">Organization setting title insurance standards</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.nolo.com/legal-encyclopedia/covenants-conditions-restrictions-ccrs-overview.html" target="_blank" rel="noopener noreferrer">CC&R</a></div>
+                        <div class="acronym-full">Covenants, Conditions, and Restrictions</div>
+                        <div class="acronym-desc">Rules governing property use in a community</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/c/closing-protection-letter.asp" target="_blank" rel="noopener noreferrer">CPL</a></div>
+                        <div class="acronym-full">Closing Protection Letter</div>
+                        <div class="acronym-desc">Title company's guarantee protecting against agent errors</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/e/encumbrance.asp" target="_blank" rel="noopener noreferrer">O&E</a></div>
+                        <div class="acronym-full">Ownership and Encumbrance</div>
+                        <div class="acronym-desc">Report showing property ownership and liens</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.consumerfinance.gov/ask-cfpb/what-is-owners-title-insurance-en-164/" target="_blank" rel="noopener noreferrer">Title Insuraance</a></div>
+                        <div class="acronym-full">Title Innsurance</div>
+                        <div class="acronym-desc">A unique type of insurance that protects both homeowners and lenders from financial loss due to defects in the title</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/p/preliminary-report.asp" target="_blank" rel="noopener noreferrer">PR</a></div>
+                        <div class="acronym-full">Preliminary Report</div>
+                        <div class="acronym-desc">Initial title report before final policy</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/p/planned-unit-development-pud.asp" target="_blank" rel="noopener noreferrer">PUD</a></div>
+                        <div class="acronym-full">Planned Unit Development</div>
+                        <div class="acronym-desc">Type of community with shared common areas</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/s/single-family-home.asp" target="_blank" rel="noopener noreferrer">SFR</a></div>
+                        <div class="acronym-full">Single Family Residence</div>
+                        <div class="acronym-desc">Standalone home on its own lot</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Miscellaneous -->
+            <div class="category-section" data-category="misc">
+                <div class="category-header">Miscellaneous But Important</div>
+                <div class="acronym-grid">
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/d/down-payment-assistance.asp" target="_blank" rel="noopener noreferrer">DPA</a></div>
+                        <div class="acronym-full">Down Payment Assistance</div>
+                        <div class="acronym-desc">A type of financial aid designed to help eligible homebuyers with the costs associated with purchasing a home, primarily the down payment and closing costs.</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/e/early-payment-default.asp" target="_blank" rel="noopener noreferrer">EPO</a></div>
+                        <div class="acronym-full">Early Payment Default/Early Payoff</div>
+                        <div class="acronym-desc">Loan paid off within first few months</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/l/llc.asp" target="_blank" rel="noopener noreferrer">LLC</a></div>
+                        <div class="acronym-full">Limited Liability Company</div>
+                        <div class="acronym-desc">Business entity that might own investment property</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.mersinc.org/" target="_blank" rel="noopener noreferrer">MERS</a></div>
+                        <div class="acronym-full">Mortgage Electronic Registration Systems</div>
+                        <div class="acronym-desc">Electronic registry tracking mortgage ownership transfers</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/l/loan-modification.asp" target="_blank" rel="noopener noreferrer">MOD</a></div>
+                        <div class="acronym-full">Loan Modification</div>
+                        <div class="acronym-desc">Changes to original loan terms to help struggling borrower</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/n/notice-of-default.asp" target="_blank" rel="noopener noreferrer">NOD</a></div>
+                        <div class="acronym-full">Notice of Default</div>
+                        <div class="acronym-desc">Formal notice starting foreclosure process</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/n/nonperforming-loan.asp" target="_blank" rel="noopener noreferrer">NPL</a></div>
+                        <div class="acronym-full">Non-Performing Loan</div>
+                        <div class="acronym-desc">Loan in default or close to default</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.foreclosure.com/education/notice-of-trustee-sale.html" target="_blank" rel="noopener noreferrer">NTS</a></div>
+                        <div class="acronym-full">Notice of Trustee Sale</div>
+                        <div class="acronym-desc">Public notice of foreclosure auction date</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/p/powerofattorney.asp" target="_blank" rel="noopener noreferrer">POA</a></div>
+                        <div class="acronym-full">Power of Attorney</div>
+                        <div class="acronym-desc">Legal document allowing someone to sign on borrower's behalf</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/p/paid-outside-of-closing.asp" target="_blank" rel="noopener noreferrer">POC</a></div>
+                        <div class="acronym-full">Paid Outside of Closing</div>
+                        <div class="acronym-desc">Fees paid separately from closing transaction</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://www.investopedia.com/terms/q/quality-control.asp" target="_blank" rel="noopener noreferrer">QC</a></div>
+                        <div class="acronym-full">Quality Control</div>
+                        <div class="acronym-desc">Post-closing review process for compliance</div>
+                    </div>
+                    <div class="acronym-item">
+                        <div class="acronym-term"><a href="https://dor.wa.gov/about/newsroom/real-estate-excise-tax" target="_blank" rel="noopener noreferrer">REX</a></div>
+                        <div class="acronym-full">Real Estate Excise Tax</div>
+                        <div class="acronym-desc">State-specific transfer tax on property sales</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="noResults" class="no-results" style="display: none;">
+            No acronyms found matching your search. Try different keywords or browse by category.
+        </div>
+    </div>
+    
+    <script>
+        // Get elements
+        const searchBox = document.getElementById('searchBox');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const acronymItems = document.querySelectorAll('.acronym-item');
+        const categorySections = document.querySelectorAll('.category-section');
+        const resultCount = document.getElementById('resultCount');
+        const noResults = document.getElementById('noResults');
+        const acronymContainer = document.getElementById('acronymContainer');
+        const accessibilityBtn = document.getElementById('accessibilityBtn');
+        
+        let activeCategory = 'all';
+        let largeFontMode = false;
+        
+        // Accessibility button functionality
+        function toggleLargeFontMode() {
+            largeFontMode = !largeFontMode;
+            
+            if (largeFontMode) {
+                document.body.classList.add('large-font');
+                accessibilityBtn.innerHTML = '🔍 Normal Font Mode';
+                accessibilityBtn.setAttribute('aria-label', 'Switch back to normal font size');
+            } else {
+                document.body.classList.remove('large-font');
+                accessibilityBtn.innerHTML = '🔍 Large Font Mode';
+                accessibilityBtn.setAttribute('aria-label', 'Toggle large font mode for better readability');
+            }
+        }
+        
+        // Add event listener for accessibility button
+        accessibilityBtn.addEventListener('click', toggleLargeFontMode);
+        
+        // Keyboard accessibility for accessibility button
+        accessibilityBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleLargeFontMode();
+            }
+        });
+        
+        // Search function
+        function performSearch() {
+            const searchTerm = searchBox.value.toLowerCase();
+            let visibleCount = 0;
+            let hasVisibleItemsInAnyCategory = false;
+            
+            categorySections.forEach(section => {
+                const category = section.getAttribute('data-category');
+                let hasVisibleItems = false;
+                
+                // Check if this category should be shown based on filter
+                if (activeCategory !== 'all' && category !== activeCategory) {
+                    section.style.display = 'none';
+                    return;
+                }
+                
+                const items = section.querySelectorAll('.acronym-item');
+                
+                items.forEach(item => {
+                    const acronym = item.querySelector('.acronym-term').textContent.toLowerCase();
+                    const fullName = item.querySelector('.acronym-full').textContent.toLowerCase();
+                    const description = item.querySelector('.acronym-desc').textContent.toLowerCase();
+                    
+                    if (searchTerm === '' || 
+                        acronym.includes(searchTerm) || 
+                        fullName.includes(searchTerm) || 
+                        description.includes(searchTerm)) {
+                        
+                        item.classList.remove('hidden');
+                        visibleCount++;
+                        hasVisibleItems = true;
+                        hasVisibleItemsInAnyCategory = true;
+                        
+                        // Highlight matching text
+                        if (searchTerm) {
+                            highlightText(item, searchTerm);
+                        } else {
+                            removeHighlights(item);
+                        }
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+                
+                // Show/hide the entire category section
+                section.style.display = hasVisibleItems ? 'block' : 'none';
+            });
+            
+            // Update results count
+            if (searchTerm || activeCategory !== 'all') {
+                resultCount.textContent = `Found ${visibleCount} acronym${visibleCount !== 1 ? 's' : ''}`;
+            } else {
+                resultCount.textContent = 'Showing all acronyms';
+            }
+            
+            // Show/hide no results message
+            acronymContainer.style.display = hasVisibleItemsInAnyCategory ? 'block' : 'none';
+            noResults.style.display = hasVisibleItemsInAnyCategory ? 'none' : 'block';
+        }
+        
+        // Improved highlight function that preserves links
+        function highlightText(item, searchTerm) {
+            removeHighlights(item);
+            
+            const selectors = ['.acronym-term', '.acronym-full', '.acronym-desc'];
+            
+            selectors.forEach(selector => {
+                const element = item.querySelector(selector);
+                if (!element) return;
+                
+                // Store original HTML to preserve links
+                const originalHTML = element.innerHTML;
+                
+                // Get the text content for matching
+                const textContent = element.textContent;
+                const regex = new RegExp(`(${escapeRegExp(searchTerm)})`, 'gi');
+                
+                // Only highlight if there's a match
+                if (regex.test(textContent)) {
+                    // If element contains a link, handle it specially
+                    if (element.querySelector('a')) {
+                        const link = element.querySelector('a');
+                        const linkText = link.textContent;
+                        const linkRegex = new RegExp(`(${escapeRegExp(searchTerm)})`, 'gi');
+                        
+                        if (linkRegex.test(linkText)) {
+                            const highlightedLinkText = linkText.replace(linkRegex, '<span class="highlight">$1</span>');
+                            link.innerHTML = highlightedLinkText;
+                        }
+                    } else {
+                        // No link, safe to replace entire innerHTML
+                        const highlightedHTML = textContent.replace(regex, '<span class="highlight">$1</span>');
+                        element.innerHTML = highlightedHTML;
+                    }
+                }
+            });
+        }
+        
+        // Improved remove highlights function
+        function removeHighlights(item) {
+            // Remove all highlight spans while preserving their text content
+            const highlighted = item.querySelectorAll('.highlight');
+            highlighted.forEach(span => {
+                const parent = span.parentNode;
+                parent.replaceChild(document.createTextNode(span.textContent), span);
+                parent.normalize();
+            });
+        }
+        
+        // Escape special regex characters
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+        
+        // Category filter
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Update active category
+                activeCategory = button.getAttribute('data-category');
+                
+                // Perform search with new filter
+                performSearch();
+            });
+        });
+        
+        // Search input event
+        searchBox.addEventListener('input', performSearch);
+        
+        // Clear search on escape
+        searchBox.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                searchBox.value = '';
+                performSearch();
+            }
+        });
+        
+        // Initial load
+        performSearch();
+    </script>
+</body>
+</html>
